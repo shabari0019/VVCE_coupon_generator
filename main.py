@@ -63,7 +63,9 @@ def index():
         coupon_code = find_coupon_by_number(number)
 
         if coupon_code:
-            return render_template('index.html', coupon=coupon_code)
+            TIME = datetime.now().strftime("%H:%M")
+            DATE= date.today().strftime("%B %d, %Y")
+            return render_template('index.html', coupon=coupon_code,D=(TIME,DATE))
         else:
             flash('Number not found in the database or Coupon Generated already.', 'error')
     return render_template('index.html')
