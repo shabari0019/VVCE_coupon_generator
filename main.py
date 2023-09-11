@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 coupon_lock = threading.Lock()
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'  # Update with your database URI
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'  
 db = SQLAlchemy(app)
 
 class Coupon(db.Model):
@@ -36,7 +36,7 @@ def add():
             )
             db.session.add(coupon)
 
-    # Commit the changes to the database
+    
     db.session.commit()
 
     return "Reset successfull "
