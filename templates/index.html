@@ -84,6 +84,10 @@
         h2 {
             margin-top: 20px;
         }
+        .img{
+        width:50%;
+        height:50%;
+        }
     </style>
 </head>
 <body>
@@ -106,7 +110,14 @@
         </div>
         {% if coupon %}
         <div class="flash1">
-            <h2>Your Coupon Code:</h2>
+            <div class="left-content">
+                 <p>{{D[1]}}</p>
+             </div>
+            <div class="right-content">
+                 <p>{{D[0]}}</p>
+             </div>
+            <img class="img" src='https://vvce.ac.in/wp-content/uploads/2020/03/vvce-logo.png'>
+            <h3>Your Coupon Code:</h3>
             <p>{{ coupon }}</p>
         </div>
         {% endif %}
